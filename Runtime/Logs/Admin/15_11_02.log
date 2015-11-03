@@ -1,0 +1,215 @@
+[ 2015-11-02T11:49:43+08:00 ] 127.0.0.1 /index.php?s=/Admin/Public/login.html
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.005000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.121007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.128008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009000s ]
+
+[ 2015-11-02T11:49:48+08:00 ] 127.0.0.1 /index.php?s=/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.008000s ]
+NOTIC: [8] Undefined index: lite E:\www\wemall\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0050s ]
+SQL: SELECT `uid`,`nickname`,`account`,`paykey`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `yershop_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0020s ]
+SQL: INSERT INTO `yershop_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES ('1','1','2130706433','member','1','1446436187','admin在2015-11-02 11:49登录了后台') [ RunTime:0.0320s ]
+SQL: SELECT * FROM `yershop_action` WHERE `name` = 'user_login' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined offset: 1 E:\www\wemall\Application\Common\Common\function.php 第 1086 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given E:\www\wemall\Application\Common\Common\function.php 第 1086 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` WHERE `action_id` = 1 AND `user_id` = 1 AND `create_time` > 1446349787 LIMIT 1   [ RunTime:0.0500s ]
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0030s ]
+SQL: UPDATE `yershop_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.0300s ]
+SQL: UPDATE `yershop_member` SET `login`=`login`+1,`last_login_time`='1446436187',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0030s ]
+
+[ 2015-11-02T11:49:52+08:00 ] 127.0.0.1 /index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `yershop_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `yershop_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0730s ]
+SQL: SELECT `pid` FROM `yershop_menu` WHERE ( pid !=0 AND url like '%Index/index%' ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_config` [ RunTime:0.0030s ]
+SQL: UPDATE `yershop_config` SET `value`='http://twemall.com' WHERE ( name='DOMAIN' ) [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.010000s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `yershop_addons` [ RunTime:0.0030s ]
+SQL: SELECT `config` FROM `yershop_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_member` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_document` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_category` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_model` LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.005001s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.613035s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.090005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.439025s ]
+SQL: SELECT `config` FROM `yershop_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant HTTP_CLIENT_IP - assumed 'HTTP_CLIENT_IP' E:\www\wemall\Application\Common\Common\function.php 第 846 行.
+NOTIC: [8] Use of undefined constant HTTP_X_FORWARDED_FOR - assumed 'HTTP_X_FORWARDED_FOR' E:\www\wemall\Application\Common\Common\function.php 第 848 行.
+NOTIC: [8] Use of undefined constant REMOTE_ADDR - assumed 'REMOTE_ADDR' E:\www\wemall\Application\Common\Common\function.php 第 850 行.
+NOTIC: [8] Use of undefined constant REMOTE_ADDR - assumed 'REMOTE_ADDR' E:\www\wemall\Application\Common\Common\function.php 第 850 行.
+NOTIC: [8] Use of undefined constant unknown - assumed 'unknown' E:\www\wemall\Application\Common\Common\function.php 第 850 行.
+NOTIC: [8] Use of undefined constant REMOTE_ADDR - assumed 'REMOTE_ADDR' E:\www\wemall\Application\Common\Common\function.php 第 851 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.923167s ]
+SQL: select version() as v; [ RunTime:0.0410s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.188011s ]
+INFO: [ view_parse ] --END-- [ RunTime:-2.188126s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-2.385136s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:2.394137s ]
+SQL: SELECT `config` FROM `yershop_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-3.205184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062004s ]
+INFO: [ view_parse ] --END-- [ RunTime:-2.515144s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-2.573147s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.179010s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:3.025173s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.088005s ]
+INFO: [ view_parse ] --END-- [ RunTime:-2.515144s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-2.599149s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.008000s ]
+
+[ 2015-11-02T11:50:06+08:00 ] 127.0.0.1 /index.php?s=/Admin/Config/group.html
+SQL: SHOW COLUMNS FROM `yershop_menu` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`title`,`url` FROM `yershop_menu` WHERE `pid` = 0 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `pid` FROM `yershop_menu` WHERE ( pid !=0 AND url like '%Config/group%' ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `yershop_menu` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT DISTINCT  `group` FROM `yershop_menu` WHERE `group` <> '' AND `pid` = 68  [ RunTime:0.0160s ]
+SQL: SELECT `id`,`url` FROM `yershop_menu` WHERE `pid` = 68 AND `hide` = 0  [ RunTime:0.0020s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `yershop_menu` WHERE `group` = '系统设置' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `yershop_menu` WHERE `group` = '数据备份' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0010s ]
+SQL: SELECT `id`,`pid`,`title`,`url`,`tip` FROM `yershop_menu` WHERE `group` = '预约管理' AND `pid` = 68 AND `hide` = 0 ORDER BY sort asc  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yershop_config` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `yershop_config` WHERE `status` = 1 AND `group` = 1 ORDER BY sort  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004001s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.009001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.017058s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.029058s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2015-11-02T11:50:19+08:00 ] 127.0.0.1 /index.php?s=/Admin/Config/group/id/2.html
+SQL: SHOW COLUMNS FROM `yershop_config` [ RunTime:0.0030s ]
+SQL: SELECT `id`,`name`,`title`,`extra`,`value`,`remark`,`type` FROM `yershop_config` WHERE `status` = 1 AND `group` = 2 ORDER BY sort  [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.011000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.118064s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.124064s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009001s ]
+
+[ 2015-11-02T11:50:29+08:00 ] 127.0.0.1 /index.php?s=/Admin/Index/index.html
+SQL: SHOW COLUMNS FROM `yershop_config` [ RunTime:0.0020s ]
+SQL: UPDATE `yershop_config` SET `value`='http://twemall.com' WHERE ( name='DOMAIN' ) [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.005000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.011000s ]
+INFO: [ AdminIndex ] --START--
+SQL: SHOW COLUMNS FROM `yershop_addons` [ RunTime:0.0020s ]
+SQL: SELECT `config` FROM `yershop_addons` WHERE `name` = 'SiteStat' AND `status` = 1 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `yershop_member` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_member` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_action_log` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_action_log` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_document` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_document` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_category` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_category` LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `yershop_model` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yershop_model` LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-0.583034s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009000s ]
+INFO: Run Addons\SiteStat\SiteStatAddon [ RunTime:0.416024s ]
+SQL: SELECT `config` FROM `yershop_addons` WHERE `name` = 'SystemInfo' AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant HTTP_CLIENT_IP - assumed 'HTTP_CLIENT_IP' E:\www\wemall\Application\Common\Common\function.php 第 846 行.
+NOTIC: [8] Use of undefined constant HTTP_X_FORWARDED_FOR - assumed 'HTTP_X_FORWARDED_FOR' E:\www\wemall\Application\Common\Common\function.php 第 848 行.
+NOTIC: [8] Use of undefined constant REMOTE_ADDR - assumed 'REMOTE_ADDR' E:\www\wemall\Application\Common\Common\function.php 第 850 行.
+NOTIC: [8] Use of undefined constant REMOTE_ADDR - assumed 'REMOTE_ADDR' E:\www\wemall\Application\Common\Common\function.php 第 850 行.
+NOTIC: [8] Use of undefined constant unknown - assumed 'unknown' E:\www\wemall\Application\Common\Common\function.php 第 850 行.
+NOTIC: [8] Use of undefined constant REMOTE_ADDR - assumed 'REMOTE_ADDR' E:\www\wemall\Application\Common\Common\function.php 第 851 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.005001s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.552146s ]
+SQL: select version() as v; [ RunTime:0.0010s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.180011s ]
+INFO: [ view_parse ] --END-- [ RunTime:-1.810103s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-1.988114s ]
+INFO: Run Addons\SystemInfo\SystemInfoAddon [ RunTime:1.992114s ]
+SQL: SELECT `config` FROM `yershop_addons` WHERE `name` = 'DevTeam' AND `status` = 1 LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.004000s ]
+INFO: [ template_filter ] --END-- [ RunTime:-2.718156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065004s ]
+INFO: [ view_parse ] --END-- [ RunTime:-2.054117s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-2.116121s ]
+INFO: Run Addons\DevTeam\DevTeamAddon [ RunTime:0.125007s ]
+INFO: [ AdminIndex ] --END-- [ RunTime:2.545145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093006s ]
+INFO: [ view_parse ] --END-- [ RunTime:-2.054117s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:-2.144123s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.010000s ]
+
